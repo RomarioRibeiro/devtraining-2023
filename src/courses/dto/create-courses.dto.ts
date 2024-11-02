@@ -1,5 +1,13 @@
+import { IsString } from "class-validator"
+
 export class CreateCourseDTO {
+
+    @IsString()
     name: string
+
+    @IsString()
     description: string
-    tags: []
+
+    @IsString({ each: true })
+    tags: string[]
 }
